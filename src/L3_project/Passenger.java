@@ -1,48 +1,76 @@
 package L3_project;
-
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 
 enum Berth{
-	UPPER,
-	MIDDLE,
-	LOWER
+    UPPER,
+    MIDDLE,
+    LOWER
 }
-
 public class Passenger {
-	int pId;
-	String name;
-	Berth prefBerth;
-	Berth allocateBerth;
-	LocalDateTime bookedTime;
-	public int getpId() {
-		return pId;
-	}
-	public void setpId(int pId) {
-		this.pId = pId;
-	}
-	public String getName() {
-		return name;
-	}
-	public void setName(String name) {
-		this.name = name;
-	}
-	public Berth getPrefBerth() {
-		return prefBerth;
-	}
-	public void setPrefBerth(Berth prefBerth) {
-		this.prefBerth = prefBerth;
-	}
-	public Berth getAllocateBerth() {
-		return allocateBerth;
-	}
-	public void setAllocateBerth(Berth allocateBerth) {
-		this.allocateBerth = allocateBerth;
-	}
-	public LocalDateTime getBookedTime() {
-		return bookedTime;
-	}
-	public void setBookedTime(LocalDateTime bookedTime) {
-		this.bookedTime = bookedTime;
-	}
 
+    private int id;
+
+    private String name;
+
+    private Berth prefBerth;
+
+    private Berth allocatedBerth;
+
+    private LocalDate bkdDate = LocalDate.now();
+
+    public Passenger(int id,String name,Berth prefBerth){
+        this.id = id;
+        this.name=name;
+        this.prefBerth=prefBerth;
+    }
+    @Override
+    public String toString() {
+        return "Passenger{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", prefBerth=" + prefBerth +
+                ", allocatedBerth=" + allocatedBerth +
+                ", bkdDate=" + bkdDate +
+                '}';
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public Berth getPrefBerth() {
+        return prefBerth;
+    }
+
+    public void setPrefBerth(Berth prefBerth) {
+        this.prefBerth = prefBerth;
+    }
+
+    public Berth getAllocatedBerth() {
+        return allocatedBerth;
+    }
+
+    public void setAllocatedBerth(Berth allocatedBerth) {
+        this.allocatedBerth = allocatedBerth;
+    }
+
+    public LocalDate getBkdDate() {
+        return bkdDate;
+    }
+
+    public void setBkdDate(LocalDate bkdDate) {
+        this.bkdDate = bkdDate;
+    }
 }
